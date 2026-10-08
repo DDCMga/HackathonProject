@@ -1,0 +1,24 @@
+window_seconds: 60
+hop_seconds: 30
+
+noise_filter:
+  event_types:
+    - dhcp
+    - arp
+    - multicast
+    - dns
+  ignored_dest_ips:
+    - 224.0.0.1
+    - 255.255.255.255
+
+risk_weights:
+  anomaly: 0.40
+  threat: 0.40
+  evidence: 0.20
+
+risk_bands:
+  normal: [0, 30]
+  suspicious: [31, 70]
+  malicious: [71, 100]
+
+attention_floor: 31
